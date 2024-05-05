@@ -10,7 +10,12 @@ import { StackActions } from '@react-navigation/native'
 import { Stack } from 'expo-router'
 import { NativeStackView } from '@react-navigation/native-stack'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import TrackPlayer from 'react-native-track-player'
+import { playbackService } from '@/constants/playBackgroundService'
+import { colors } from '@/constants/token'
 SplashScreen.preventAutoHideAsync()
+
+TrackPlayer.registerPlaybackService(() => playbackService)
 const App = () => {
 	const handleTrackPlayerLoaded = useCallback(() => {
 		SplashScreen.hideAsync()
@@ -42,6 +47,20 @@ const RootNavigation = () => {
 					gestureDirection: 'vertical',
 					animationDuration: 400,
 					headerShown: false,
+				}}
+			/>
+
+			<Stack.Screen
+				name="(modals)/addToPlaylist"
+				options={{
+					presentation: 'modal',
+					headerStyle: {
+						backgroundColor: colors.background,
+					},
+					headerTitle: 'Add to Playlist',
+					headerTitleStyle: {
+						color: colors.text,
+					},
 				}}
 			/>
 		</Stack>

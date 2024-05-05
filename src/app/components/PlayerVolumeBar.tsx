@@ -2,7 +2,7 @@ import { colors } from '@/constants/token'
 import { useTrackPlayerVolume } from '@/hooks/useTrackPlayerVolume'
 import { utilsStyles } from '@/styles'
 import { Ionicons } from '@expo/vector-icons'
-import { View, ViewProps } from 'react-native'
+import { Text, View, ViewProps } from 'react-native'
 import { Slider } from 'react-native-awesome-slider'
 import { useSharedValue } from 'react-native-reanimated'
 
